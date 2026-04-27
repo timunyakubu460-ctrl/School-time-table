@@ -1,136 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ND2 CSC Lecture Schedule</title>
-<style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #1e3c72, #2a5298);
-        margin: 0;
-        padding: 20px;
-        color: #fff;
-    }
-
-    h1 {
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 2.5em;
-    }
-
-    .container {
-        max-width: 1000px;
-        margin: auto;
-    }
-
-    .day {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 15px;
-        margin-bottom: 20px;
-        padding: 15px 20px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        backdrop-filter: blur(10px);
-    }
-
-    .day h2 {
-        margin-top: 0;
-        border-bottom: 2px solid rgba(255,255,255,0.3);
-        padding-bottom: 5px;
-    }
-
-    .course {
-        margin: 10px 0;
-        padding: 10px;
-        border-radius: 10px;
-        background: rgba(255,255,255,0.15);
-        transition: transform 0.2s, background 0.3s;
-    }
-
-    .course:hover {
-        transform: scale(1.03);
-        background: rgba(255,255,255,0.25);
-    }
-
-    .course span {
-        display: block;
-        font-size: 0.95em;
-        opacity: 0.9;
-    }
-
-    footer {
-        text-align: center;
-        margin-top: 30px;
-        font-size: 0.9em;
-        opacity: 0.8;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ND2 CSC Lecture Timetable</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            margin: 0;
+            padding: 20px;
+            color: #1b5e20;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        header {
+            background: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .subtitle {
+            font-size: 18px;
+            margin-top: 8px;
+            opacity: 0.95;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 14px 12px;
+            text-align: left;
+            border-bottom: 1px solid #c8e6c9;
+        }
+        th {
+            background: #388e3c;
+            color: white;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background: #f1f8e9;
+        }
+        .day {
+            background: #66bb6a;
+            color: white;
+            font-weight: bold;
+            width: 120px;
+        }
+        .time {
+            background: #81c784;
+            color: #1b5e20;
+            font-weight: 600;
+            width: 180px;
+        }
+        .course {
+            font-weight: 500;
+        }
+        .room {
+            color: #2e7d32;
+            font-style: italic;
+        }
+        .no-lecture {
+            color: #d32f2f;
+            font-style: italic;
+            text-align: center;
+        }
+        footer {
+            background: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+        .gate {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 22px;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>FEDERAL SCHOOL OF STATISTICS, MANCHOK</h1>
+            <p class="subtitle">ND2 CSC Lecture Timetable<br>
+            Second Semester 2025/2026 Academic Session (Draft)</p>
+        </header>
 
-<div class="container">
-    <h1>ND2 CSC Lecture Schedule</h1>
-    <h3 style="text-align:center;">Second Semester 2025/2026</h3>
+        <div class="gate">🚪 ND2 COMPUTER SCIENCE (CSC) TIMETABLE</div>
 
-    <div class="day">
-        <h2>Monday</h2>
-        <div class="course">
-            <strong>COM 221 - Fidelis</strong>
-            <span>Time: Morning Slot</span>
-            <span>Venue: RM C4</span>
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>DAY</th>
+                    <th>TIME</th>
+                    <th>COURSE CODE & LECTURER</th>
+                    <th>VENUE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Monday -->
+                <tr>
+                    <td rowspan="1" class="day">MONDAY</td>
+                    <td class="time">No Lecture</td>
+                    <td class="no-lecture" colspan="2">No lectures scheduled for ND2 CSC on Monday</td>
+                </tr>
+
+                <!-- Tuesday -->
+                <tr>
+                    <td rowspan="1" class="day">TUESDAY</td>
+                    <td class="time">10:00 - 12:00</td>
+                    <td class="course">COM 223 - Precious</td>
+                    <td class="room">RM C4</td>
+                </tr>
+
+                <!-- Wednesday -->
+                <tr>
+                    <td rowspan="2" class="day">WEDNESDAY</td>
+                    <td class="time">10:00 - 12:00</td>
+                    <td class="course">COM 222 - Dung</td>
+                    <td class="room">RM C4</td>
+                </tr>
+                <tr>
+                    <td class="time">12:00 - 02:00</td>
+                    <td class="course">GNS 204 - Katung</td>
+                    <td class="room">RM C4</td>
+                </tr>
+
+                <!-- Thursday -->
+                <tr>
+                    <td rowspan="1" class="day">THURSDAY</td>
+                    <td class="time">10:00 - 12:00</td>
+                    <td class="course">COM 224 - Sankwai</td>
+                    <td class="room">RM C3</td>
+                </tr>
+
+                <!-- Friday -->
+                <tr>
+                    <td rowspan="2" class="day">FRIDAY</td>
+                    <td class="time">10:00 - 12:00</td>
+                    <td class="course">COM 225 - Timothy</td>
+                    <td class="room">RM S3</td>
+                </tr>
+                <tr>
+                    <td class="time">12:00 - 02:00</td>
+                    <td class="course">COM 226 - Bobai</td>
+                    <td class="room">RM S3</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <footer>
+            <strong>ND2 CSC Lecture Schedule</strong><br>
+            Draft Copy • Academic Planning Unit<br>
+            Mr. Kawai Vincent (Director) • Date: 13/04/2026
+        </footer>
     </div>
-
-    <div class="day">
-        <h2>Tuesday</h2>
-        <div class="course">
-            <strong>COM 223 - Precious</strong>
-            <span>Time: Morning Slot</span>
-            <span>Venue: RM C4</span>
-        </div>
-    </div>
-
-    <div class="day">
-        <h2>Wednesday</h2>
-        <div class="course">
-            <strong>COM 222 - Dung</strong>
-            <span>Time: 8:00 - 10:00</span>
-            <span>Venue: RM C4</span>
-        </div>
-        <div class="course">
-            <strong>GNS 204 - Katung</strong>
-            <span>Time: 10:00 - 12:00</span>
-            <span>Venue: RM C4</span>
-        </div>
-    </div>
-
-    <div class="day">
-        <h2>Thursday</h2>
-        <div class="course">
-            <strong>COM 224 - Sankwai</strong>
-            <span>Time: Morning Slot</span>
-            <span>Venue: RM C3</span>
-        </div>
-    </div>
-
-    <div class="day">
-        <h2>Friday</h2>
-        <div class="course">
-            <strong>COM 225 - Timothy</strong>
-            <span>Time: 8:00 - 10:00</span>
-            <span>Venue: RM S3</span>
-        </div>
-        <div class="course">
-            <strong>COM 226 - Bobai</strong>
-            <span>Time: 10:00 - 12:00</span>
-            <span>Venue: RM S3</span>
-        </div>
-    </div>
-
-    <footer>
-        Designed for ND2 Computer Science Students
-    </footer>
-</div>
-
 </body>
 </html>
