@@ -3,172 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ND2 CSC Lecture Timetable</title>
+    <title>Class Timetable</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            font-family: Arial, sans-serif;
+            background: #f0fff4;
+            padding: 30px 15px;
             margin: 0;
-            padding: 20px;
-            color: #1b5e20;
+            font-weight: bold;
         }
-        .container {
-            max-width: 1000px;
+        
+        .wrapper {
+            max-width: 800px;
             margin: 0 auto;
+        }
+        
+        .header {
+            background: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 12px 12px 0 0;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .day-card {
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: 3px solid #2e7d32;
             overflow: hidden;
+            box-shadow: 0 4px 12px rgba(27, 94, 32, 0.15);
         }
-        header {
-            background: #2e7d32;
+        
+        .day-title {
+            background: #43a047;
             color: white;
-            text-align: center;
-            padding: 25px 20px;
-        }
-        h1 {
-            margin: 0;
-            font-size: 28px;
-        }
-        .subtitle {
-            font-size: 18px;
-            margin-top: 8px;
-            opacity: 0.95;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        th, td {
-            padding: 14px 12px;
-            text-align: left;
-            border-bottom: 1px solid #c8e6c9;
-        }
-        th {
-            background: #388e3c;
-            color: white;
-            font-weight: 600;
-        }
-        tr:nth-child(even) {
-            background: #f1f8e9;
-        }
-        .day {
-            background: #66bb6a;
-            color: white;
+            padding: 15px 20px;
+            font-size: 20px;
             font-weight: bold;
-            width: 120px;
+            border-bottom: 3px solid #2e7d32;
         }
-        .time {
-            background: #81c784;
+        
+        .class-row {
+            display: flex;
+            padding: 18px 20px;
+            border-bottom: 2px solid #c8e6c9;
+            align-items: center;
+        }
+        
+        .class-row:last-child {
+            border-bottom: none;
+        }
+        
+        .time-box {
+            background: #e8f5e9;
             color: #1b5e20;
-            font-weight: 600;
-            width: 180px;
-        }
-        .course {
-            font-weight: 500;
-        }
-        .room {
-            color: #2e7d32;
-            font-style: italic;
-        }
-        .no-lecture {
-            color: #d32f2f;
-            font-style: italic;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 2px solid #4caf50;
+            min-width: 120px;
             text-align: center;
-        }
-        footer {
-            background: #2e7d32;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 14px;
-        }
-        .gate {
-            text-align: center;
-            margin: 20px 0;
-            font-size: 22px;
-            color: #2e7d32;
             font-weight: bold;
+            margin-right: 20px;
+        }
+        
+        .course-box {
+            color: #1b5e20;
+            font-size: 17px;
+            font-weight: bold;
+            flex: 1;
+        }
+        
+        .no-class-card {
+            background: white;
+            border-radius: 12px;
+            border: 3px solid #81c784;
+            text-align: center;
+            padding: 30px;
+            color: #388e3c;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(27, 94, 32, 0.15);
+        }
+        
+        .no-class-card .day-title {
+            background: #81c784;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: none;
+        }
+        
+        @media (max-width: 600px) {
+            .class-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .time-box {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>FEDERAL SCHOOL OF STATISTICS, MANCHOK</h1>
-            <p class="subtitle">ND2 CSC Lecture Timetable<br>
-            Second Semester 2025/2026 Academic Session (Draft)</p>
-        </header>
-
-        <div class="gate">🚪 ND2 COMPUTER SCIENCE (CSC) TIMETABLE</div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>DAY</th>
-                    <th>TIME</th>
-                    <th>COURSE CODE & LECTURER</th>
-                    <th>VENUE</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Monday -->
-                <tr>
-                    <td rowspan="1" class="day">MONDAY</td>
-                    <td class="time">No Lecture</td>
-                    <td class="no-lecture" colspan="2">No lectures scheduled for ND2 CSC on Monday</td>
-                </tr>
-
-                <!-- Tuesday -->
-                <tr>
-                    <td rowspan="1" class="day">TUESDAY</td>
-                    <td class="time">10:00 - 12:00</td>
-                    <td class="course">COM 223 - Precious</td>
-                    <td class="room">RM C4</td>
-                </tr>
-
-                <!-- Wednesday -->
-                <tr>
-                    <td rowspan="2" class="day">WEDNESDAY</td>
-                    <td class="time">10:00 - 12:00</td>
-                    <td class="course">COM 222 - Dung</td>
-                    <td class="room">RM C4</td>
-                </tr>
-                <tr>
-                    <td class="time">12:00 - 02:00</td>
-                    <td class="course">GNS 204 - Katung</td>
-                    <td class="room">RM C4</td>
-                </tr>
-
-                <!-- Thursday -->
-                <tr>
-                    <td rowspan="1" class="day">THURSDAY</td>
-                    <td class="time">10:00 - 12:00</td>
-                    <td class="course">COM 224 - Sankwai</td>
-                    <td class="room">RM C3</td>
-                </tr>
-
-                <!-- Friday -->
-                <tr>
-                    <td rowspan="2" class="day">FRIDAY</td>
-                    <td class="time">10:00 - 12:00</td>
-                    <td class="course">COM 225 - Timothy</td>
-                    <td class="room">RM S3</td>
-                </tr>
-                <tr>
-                    <td class="time">12:00 - 02:00</td>
-                    <td class="course">COM 226 - Bobai</td>
-                    <td class="room">RM S3</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <footer>
-            <strong>ND2 CSC Lecture Schedule</strong><br>
-            Draft Copy • Academic Planning Unit<br>
-            Mr. Kawai Vincent (Director) • Date: 13/04/2026
-        </footer>
+    <div class="wrapper">
+        <div class="header">CLASS TIMETABLE</div>
+        
+        <div class="day-card">
+            <div class="day-title">MONDAY</div>
+            <div class="class-row">
+                <div class="time-box">10:00 - 12:00</div>
+                <div class="course-box">GNS204 - KATUNG GNSH</div>
+            </div>
+            <div class="class-row">
+                <div class="time-box">12:00 - 2:00</div>
+                <div class="course-box">COM221 - FIDELIS RMS3</div>
+            </div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-title">TUESDAY</div>
+            <div class="class-row">
+                <div class="time-box">8:00 - 10:00</div>
+                <div class="course-box">COM223 - PRECIOUS RMC2</div>
+            </div>
+            <div class="class-row">
+                <div class="time-box">12:00 - 2:00</div>
+                <div class="course-box">COM222 - DUNG RMC2</div>
+            </div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-title">WEDNESDAY</div>
+            <div class="class-row">
+                <div class="time-box">8:00 - 10:00</div>
+                <div class="course-box">COM224 - SANKWE RMC4</div>
+            </div>
+            <div class="class-row">
+                <div class="time-box">12:00 - 2:00</div>
+                <div class="course-box">COM225 - TIMOTHY RMC2</div>
+            </div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-title">THURSDAY</div>
+            <div class="class-row">
+                <div class="time-box">12:00 - 2:00</div>
+                <div class="course-box">COM226 - BOBAI RMB2</div>
+            </div>
+        </div>
+        
+        <div class="no-class-card">
+            <div class="day-title">FRIDAY</div>
+            NO CLASS
+        </div>
+        
     </div>
 </body>
 </html>
